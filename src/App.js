@@ -4,7 +4,7 @@ import Topic from "./components/Topic";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <main className="flex flex-column">
         <Topic />

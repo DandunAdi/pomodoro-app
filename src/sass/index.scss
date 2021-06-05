@@ -1,5 +1,6 @@
 @import "./_variables";
 @import "./_helpers";
+@import "./components/_App";
 @import "./components/_Header";
 @import "./components/_Topic";
 
@@ -13,8 +14,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #fdfdfd;
-  color: #232830;
 }
 
 button {

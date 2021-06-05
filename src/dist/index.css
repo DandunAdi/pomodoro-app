@@ -145,6 +145,34 @@
           box-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
 }
 
+.App {
+  max-width: 36rem;
+  margin: 0 auto;
+  background-color: #fdfdfd;
+  color: #232830;
+}
+
+@media (min-width: 36rem) {
+  body {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App {
+    width: 36rem;
+    -webkit-box-shadow: 2px 2px 40px rgba(220, 220, 220, 0.4);
+            box-shadow: 2px 2px 40px rgba(220, 220, 220, 0.4);
+    padding-bottom: 3rem;
+  }
+}
+
 .Header {
   background-color: #fff;
   border-bottom: 2px solid #dedde3;
@@ -165,8 +193,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #fdfdfd;
-  color: #232830;
 }
 
 button {
