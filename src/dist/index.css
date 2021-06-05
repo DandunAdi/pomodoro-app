@@ -1,12 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-.my-1 {
+.py-1 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.my-2 {
+.py-2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-3 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-4 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.px-1 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-3 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-4 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.my-1 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.my-4 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .flex {
@@ -34,6 +84,10 @@
 
 .text-white {
   color: #fff;
+}
+
+.text-primary {
+  color: #fe9225;
 }
 
 .text-secondary {
@@ -86,9 +140,20 @@
   background-color: #fe9225;
 }
 
+.shadow {
+  -webkit-box-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
+          box-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
+}
+
 .Header {
   background-color: #fff;
   border-bottom: 2px solid #dedde3;
+}
+
+.Topic {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  min-width: 90%;
 }
 
 * {
@@ -101,6 +166,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #fdfdfd;
+  color: #232830;
 }
 
 button {
