@@ -1,7 +1,4 @@
-.text-center {
-  text-align: center;
-}
-
+// --------------- LAYOUTS ---------------
 .my-1 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -11,18 +8,64 @@
   padding-bottom: 1rem;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-column {
+    flex-direction: column;
+  }
+}
+
+// --------------- FONTS ---------------
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: #fff;
+}
+.text-secondary {
+  color: $lightGray;
+}
+.xs {
+  font-size: x-small;
+}
 .sm {
   font-size: small;
 }
 .md {
   font-size: medium;
 }
+.lg {
+  font-size: large;
+}
+.xl {
+  font-size: 3rem;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
 
-.font-weight {
+.fw {
   &-400 {
     font-weight: 400;
   }
   &-500 {
     font-weight: 500;
+  }
+  &-700 {
+    font-weight: 700;
+  }
+}
+
+// --------------- COMPONENTS ---------------
+.btn {
+  padding: 0.75rem 5rem;
+  border-radius: 2rem;
+  display: inline-block;
+
+  &-primary {
+    background-color: $orange;
   }
 }

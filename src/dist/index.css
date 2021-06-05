@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-.text-center {
-  text-align: center;
-}
-
 .my-1 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -13,6 +9,41 @@
   padding-bottom: 1rem;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-secondary {
+  color: #dedde3;
+}
+
+.xs {
+  font-size: x-small;
+}
+
 .sm {
   font-size: small;
 }
@@ -21,12 +52,38 @@
   font-size: medium;
 }
 
-.font-weight-400 {
+.lg {
+  font-size: large;
+}
+
+.xl {
+  font-size: 3rem;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+.fw-400 {
   font-weight: 400;
 }
 
-.font-weight-500 {
+.fw-500 {
   font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.btn {
+  padding: 0.75rem 5rem;
+  border-radius: 2rem;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #fe9225;
 }
 
 .Header {
@@ -44,5 +101,11 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #fdfdfd;
+}
+
+button {
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=index.css.map */
