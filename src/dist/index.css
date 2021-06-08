@@ -140,6 +140,10 @@
   background-color: #fe9225;
 }
 
+.btn-danger {
+  background-color: #f25335;
+}
+
 .shadow {
   -webkit-box-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
           box-shadow: 0 0 10px rgba(220, 220, 220, 0.5);

@@ -1,27 +1,43 @@
 import { useState } from "react";
 
 const Timer = () => {
-  const [time, setTime] = useState("25:00");
+  const [timeDisplay, setTimeDisplay] = useState("25:00");
   const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [isWorkTime, setIsWorkTime] = useState(true);
 
   const handleTimer = () => {
     if (isTimerRunning) return;
 
     setIsTimerRunning(!isTimerRunning);
-    startTimer(25 * 60, setTime, () => setIsTimerRunning(false));
+
+    isWorkTime
+      ? startTimer(5, setTimeDisplay, whenTimerFinished)
+      : startTimer(3, setTimeDisplay, whenTimerFinished);
   };
+
+  const whenTimerFinished = () => {
+    setIsTimerRunning(false);
+    setIsWorkTime(!isWorkTime);
+  };
+
+  let caption = generateCaption(isTimerRunning, isWorkTime);
 
   return (
     <div className="Timer text-center flex flex-column">
       <div className="my-2 flex shadow" style={timeContainerStyle}>
-        <h1 className="xl ls-2">{time}</h1>
+        <h1 className="xl ls-2">{timeDisplay}</h1>
       </div>
-      <p className="md my-3">Let's Get Started...</p>
+      <p className="md my-3">{caption}</p>
+
       <button
-        className="btn btn-primary md text-white fw-700 my-2 shadow"
+        className={
+          "btn md text-white fw-700 my-2 shadow " +
+          (isTimerRunning ? "btn-danger" : "btn-primary")
+        }
         onClick={handleTimer}
       >
-        START SESSION
+        {(isTimerRunning ? "STOP " : "START ") +
+          (isWorkTime ? "SESSION" : "BREAK TIME")}
       </button>
     </div>
   );
@@ -52,6 +68,14 @@ const startTimer = (duration, stateHandler, onFinish) => {
 
     stateHandler(`${minutes}:${seconds}`);
   }, 1000);
+};
+
+const generateCaption = (timerRunning, workTime) => {
+  if (timerRunning) {
+    return workTime ? "You got this!" : "Enjoy your break ;)";
+  } else {
+    return workTime ? "Let's get started..." : "Hey, it's time for a break";
+  }
 };
 
 export default Timer;
