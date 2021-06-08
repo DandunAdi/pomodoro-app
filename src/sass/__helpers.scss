@@ -107,12 +107,16 @@
   padding: 0.75rem 5rem;
   border-radius: 2rem;
   display: inline-block;
+  cursor: pointer;
 
   &-primary {
     background-color: $orange;
   }
   &-danger {
     background-color: $red;
+  }
+  &:hover {
+    opacity: 0.9;
   }
 }
 
