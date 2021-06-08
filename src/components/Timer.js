@@ -4,23 +4,30 @@ const Timer = () => {
   const [timeDisplay, setTimeDisplay] = useState("25:00");
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [isWorkTime, setIsWorkTime] = useState(true);
+  const [timer, setTimer] = useState(null);
+
+  let caption = generateCaption(isTimerRunning, isWorkTime);
 
   const handleTimer = () => {
-    if (isTimerRunning) return;
+    if (isTimerRunning) {
+      whenTimerFinished();
+      clearInterval(timer);
+      return;
+    }
 
     setIsTimerRunning(!isTimerRunning);
 
-    isWorkTime
-      ? startTimer(5, setTimeDisplay, whenTimerFinished)
-      : startTimer(3, setTimeDisplay, whenTimerFinished);
+    let newTimer = isWorkTime
+      ? startTimer(25 * 60, setTimeDisplay, whenTimerFinished)
+      : startTimer(5 * 60, setTimeDisplay, whenTimerFinished);
+    setTimer(newTimer);
   };
 
   const whenTimerFinished = () => {
+    setTimeDisplay("00:00");
     setIsTimerRunning(false);
     setIsWorkTime(!isWorkTime);
   };
-
-  let caption = generateCaption(isTimerRunning, isWorkTime);
 
   return (
     <div className="Timer text-center flex flex-column">
@@ -36,7 +43,7 @@ const Timer = () => {
         }
         onClick={handleTimer}
       >
-        {(isTimerRunning ? "STOP " : "START ") +
+        {(isTimerRunning ? "FINISH " : "START ") +
           (isWorkTime ? "SESSION" : "BREAK TIME")}
       </button>
     </div>
@@ -68,6 +75,7 @@ const startTimer = (duration, stateHandler, onFinish) => {
 
     stateHandler(`${minutes}:${seconds}`);
   }, 1000);
+  return interval;
 };
 
 const generateCaption = (timerRunning, workTime) => {
